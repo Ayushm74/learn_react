@@ -20,3 +20,9 @@ const greet = (props)=>{
 };
 
 export default greet
+
+Q3: Create a button component with click event
+
+// const greet()=>{
+//     return <div> onclik</div>
+// }
