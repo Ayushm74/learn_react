@@ -26,3 +26,12 @@ Q3: Create a button component with click event
 // const greet()=>{
 //     return <div> onclik</div>
 // }
+
+const clickButton = () =>{
+    const handleClick()=>{
+        alert("omg");
+    }
+    return <button onclick={handleClick}>Click me</button>;
+};
+export default clickButton;
+
