@@ -43,3 +43,18 @@ const clickButton()=>{
     return <button onclick={ti}>click mr</button>
 }
 export default clickButton;
+
+🔹 Q4: Create a component using useState (counter)
+
+import useState from react
+
+const counter()=>{
+    const[count,setcount] = useState(0);
+    return{
+        <div>
+        <h2>Count : {count}</h2>
+        <button onclick = {()=> setcount(count+1)}>increse</button>
+        </div>
+    }
+}
+exort default counter;
