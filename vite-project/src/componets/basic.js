@@ -13,3 +13,10 @@ function Myname()=>{
     return <div> my name </div>
 }
 epxort default Myname
+
+//Q2: Create a component that takes a name as props
+const greet = (props)=>{
+    return <h2>my name {props.name}</h2>
+};
+
+export default greet
