@@ -35,3 +35,11 @@ const clickButton = () =>{
 };
 export default clickButton;
 
+
+const clickButton()=>{
+    const ti()=>{
+        alert("omg");
+    }
+    return <button onclick={ti}>click mr</button>
+}
+export default clickButton;
