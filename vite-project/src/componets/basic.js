@@ -104,3 +104,15 @@ export function add(a, b) {
 export function multiply(a, b) {
   return a * b;
 }
+import { add, multiply } from "./mathUtils";
+
+function App() {
+  return (
+    <div>
+      <p>Add: {add(2, 3)}</p>
+      <p>Multiply: {multiply(2, 3)}</p>
+    </div>
+  );
+}
+
+export default App;
