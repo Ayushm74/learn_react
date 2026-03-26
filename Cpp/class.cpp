@@ -13,8 +13,37 @@ public:
 Class SportsCar : public Car{
     public:
     string brand;
-    string
-}
+    string model;
+    bool isEnginerOn;
+    int currSpeed;
+    int currGear;
+
+    SportsCar(string b,String m){
+        this->brand = b;
+        this->model = m;
+        isEngineOn = false;
+        currSpeed= 0;
+        currGear = 0;
+    }
+
+    void startEngine(){
+
+    }
+    void shiftGear(){
+
+    }
+    void accelerate(){
+
+    }
+    void breakk(){
+
+    }
+    void stopEngine(){
+
+    }
+
+
+};
 
 int main(){
     Car* mycar = new SportsCar(ford, Mustang);
