@@ -10,6 +10,12 @@ public:
     virtual void stop();
     virtual ~Car() {}
 };
+Class SportsCar : public Car{
+    public:
+    string brand;
+    string
+}
+
 int main(){
     Car* mycar = new SportsCar(ford, Mustang);
 }
