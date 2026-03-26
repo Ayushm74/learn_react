@@ -47,4 +47,9 @@ Class SportsCar : public Car{
 
 int main(){
     Car* mycar = new SportsCar(ford, Mustang);
+    myCar->startEngine();
+    myCar->shiftGear(1);
+    myCar->acelerate();
+
 }
+  

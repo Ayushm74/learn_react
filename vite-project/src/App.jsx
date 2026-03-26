@@ -1,13 +1,14 @@
-function App(){
+fucntion App(){
+  const fruits = ["Apple", "Banana", "Mango"];
   return(
-    <div> <div>First componenet</div>
-    <div><App2/></div>
-    </div> 
-  )
+    <di>
+      <ul>
+        {
+          fruits.map((fruits,index)=>(
+            <li key={index}>{fruits}</li>
+          ))
+        }
+      </ul>
+    </di>
+  );
 }
-function App2(){
-  return(
-    <div>Second componenet</div>
-  )
-}
-export default App;
