@@ -9,8 +9,7 @@ public:
 };
 
 int main() {
-    students s1;  // object of class
-
+    students s1;  
     // assigning values
     s1.name = "Ayush";
     s1.rollno = 36;
