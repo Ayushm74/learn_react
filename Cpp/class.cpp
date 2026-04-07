@@ -1,15 +1,27 @@
-#include<stdio.h>
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-class students{
+class students {
+public:
     string name;
-    int age rollno;
+    int age, rollno;
     string grade;
-
 };
 
-int main(){
-    student s1;
-    s1.name =
+int main() {
+    students s1;  // object of class
+
+    // assigning values
+    s1.name = "Ayush";
+    s1.rollno = 36;
+    s1.age = 5;
+    s1.grade = "8.94";
+
+    // displaying values
+    cout << "Name: " << s1.name << endl;
+    cout << "Roll No: " << s1.rollno << endl;
+    cout << "Age: " << s1.age << endl;
+    cout << "Grade: " << s1.grade << endl;
+
+    return 0;
 }
