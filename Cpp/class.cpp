@@ -6,21 +6,15 @@ public:
     string name;
     int age, rollno;
     string grade;
+
 };
 
 int main() {
-    students s1;  
-    // assigning values
-    s1.name = "Ayush";
-    s1.rollno = 36;
-    s1.age = 5;
-    s1.grade = "8.94";
-
-    // displaying values
-    cout << "Name: " << s1.name << endl;
-    cout << "Roll No: " << s1.rollno << endl;
-    cout << "Age: " << s1.age << endl;
-    cout << "Grade: " << s1.grade << endl;
+    students *s = new students;
+    (*s).name = "Rohit"; 
+    (*s).age = 10;
+    (*s).roll_number = 21;
+    (*s).grade = "A+";
 
     return 0;
 }
