@@ -13,6 +13,11 @@ public:
         cout<< "hello";
 
     }
+    //parameterized constructor
+    students(int marks,string name){
+        marks = 1;
+        name = "a";
+    }
 
 };
 
