@@ -1,0 +1,12 @@
+class students{
+    int marks;
+    string name;
+// default constructor
+    students(){
+
+    }
+};
+
+int main(){
+    students s1;
+}
