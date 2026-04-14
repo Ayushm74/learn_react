@@ -18,6 +18,9 @@ public:
         marks = 1;
         name = "a";
     }
+    ~students(){
+        cout<< hello;
+    }
 
 };
 
