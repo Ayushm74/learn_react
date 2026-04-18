@@ -1,19 +1,16 @@
-import React from "react";
-
-function Button(){
-  const handleClick()=>{
-    alert("OMG");
-  };
-  return({
-    <button onClick={handleClick}>Click me<button>
-  });
-  export default Button;
-}
-
+import {useState} from "react"
 
 function App(){
-  const name = " Ausj";
-  return(
-    <h1> hello {name}</h1>
-  )
+  const [display, setDisplay] = useState(true)
+  return{
+    <>
+    <h1>Toggle in React js</h1>
+     {
+      display?<h1>Anil Sidhu</h1>:null;
+     }
+    <h1>Anil Sidhu</h1>
+    </>
+  }
 }
+
+export default App;
