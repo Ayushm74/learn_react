@@ -4,10 +4,7 @@ class students{
 public:
     int marks;
     string name;
-// default constructor
-    // students(){
 
-    // }
 public:
     students(){
         cout<< "hello";
@@ -15,15 +12,12 @@ public:
     }
     //parameterized constructor
     students(int marks,string name){
-        marks = 1;
-        name = "a";
-    }
-    ~students(){
-        cout<< hello;
+       this->marks = marks;
+        this->name =  name;
     }
 
 };
 
 int main(){
-    students s1;
+    students s1(1,"a");
 }
