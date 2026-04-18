@@ -9,3 +9,11 @@ function Button(){
   });
   export default Button;
 }
+
+
+function App(){
+  const name = " Ausj";
+  return(
+    <h1> hello {name}</h1>
+  )
+}
