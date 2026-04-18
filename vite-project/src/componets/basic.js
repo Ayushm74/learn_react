@@ -9,6 +9,7 @@ function App(){
       display?<h1>Anil Sidhu</h1>:null;
      }
     <h1>Anil Sidhu</h1>
+    <button on onclick=()=>setDisplay(y!displa)> toggle</button>
     </>
   }
 }
