@@ -2,12 +2,12 @@
 using namespace std;
 
 class Human{
-    protected:
+    public:
     string name;
     int age,weight;
 };
 
-class Student:public Human{
+class Student:protected Human{ 
     int roll_no, fees;
 };
 
