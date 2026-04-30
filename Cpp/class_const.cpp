@@ -18,7 +18,7 @@ class Student:private Human{
         this->name = name;
         this->roll_no = roll_no;
         this->weight = weight;
-        this->age = age;
+        this->age = age ;
     }
 };
 
