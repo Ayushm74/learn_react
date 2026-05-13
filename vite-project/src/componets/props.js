@@ -13,3 +13,11 @@ function UserCard(){
         </div>
     )
 }
+
+export default function App(){
+    return(
+        <div>
+        <userCard name="Ayush" age={20} city="Nagpur"/>
+        </div>
+    )
+}
