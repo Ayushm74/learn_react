@@ -17,7 +17,7 @@ function UserCard(){
 export default function App(){
     return(
         <div>
-        <userCard name="Ayush" age={20} city="Nagpur"/>
+        <userCard name="Ayush" age={20} city="Nagpur"/
         </div>
     )
 }
