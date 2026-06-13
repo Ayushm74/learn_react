@@ -29,7 +29,7 @@ function App() {
         type="number"
         placeholder="Enter first number"
         value={num1}
-        onChange={() => setNum1(target.value)}
+        onChange={(e) => setNum1(e.target.value)}
       />
 
       <br /><br />
@@ -38,7 +38,7 @@ function App() {
         type="number"
         placeholder="Enter second number"
         value={num2}
-        onChange={() => setNum2(target.value)}
+        onChange={(e) => setNum2(e.target.value)}
       />
 
       <br /><br />
@@ -52,5 +52,6 @@ function App() {
     </>
   );
 }
+
 
 export default App;
