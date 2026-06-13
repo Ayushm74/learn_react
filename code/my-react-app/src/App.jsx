@@ -1,57 +1,79 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 function App() {
-  const [num1, setNum1] = useState('');
-  const [num2, setNum2] = useState('');
-  const [result, setResult] = useState(0);
+  const [tasks, setTasks] = useState([]);
+  const [input, setInput] = useState("");
 
-  function add() {
-    setResult(Number(num1) + Number(num2));
+  // Add Task
+  function addTask() {
+    if (input.trim() === "") return;
+
+    setTasks([
+      ...tasks,
+      {
+        text: input,
+        completed: false,
+      },
+    ]);
+
+    setInput("");
   }
 
-  function sub() {
-    setResult(Number(num1) - Number(num2));
+  // Delete Task
+  function deleteTask(indexToDelete) {
+    setTasks(
+      tasks.filter((task, index) => index !== indexToDelete)
+    );
   }
 
-  function mul() {
-    setResult(Number(num1) * Number(num2));
-  }
-
-  function div() {
-    setResult(Number(num1) / Number(num2));
+  // Mark Complete
+  function toggleTask(indexToToggle) {
+    setTasks(
+      tasks.map((task, index) =>
+        index === indexToToggle
+          ? { ...task, completed: !task.completed }
+          : task
+      )
+    );
   }
 
   return (
-    <>
-      <h1>Simple Calculator</h1>
+    <div>
+      <h1>To-Do List</h1>
 
       <input
-        type="number"
-        placeholder="Enter first number"
-        value={num1}
-        onChange={(e) => setNum1(e.target.value)}
+        type="text"
+        placeholder="Enter task"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
       />
 
-      <br /><br />
+      <button onClick={addTask}>Add</button>
 
-      <input
-        type="number"
-        placeholder="Enter second number"
-        value={num2}
-        onChange={(e) => setNum2(e.target.value)}
-      />
+      <ul>
+        {tasks.map((task, index) => (
+          <li key={index}>
+            <span
+              onClick={() => toggleTask(index)}
+              style={{
+                textDecoration: task.completed
+                  ? "line-through"
+                  : "none",
+                cursor: "pointer",
+                marginRight: "10px",
+              }}
+            >
+              {task.text}
+            </span>
 
-      <br /><br />
-
-      <button onClick={add}>+</button>
-      <button onClick={sub}>-</button>
-      <button onClick={mul}>*</button>
-      <button onClick={div}>/</button>
-
-      <h2>Result: {result}</h2>
-    </>
+            <button onClick={() => deleteTask(index)}>
+              Delete
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
-
 
 export default App;
