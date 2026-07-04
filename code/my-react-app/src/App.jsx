@@ -1,76 +1,61 @@
 import { useState } from "react";
+import "./App.css";
 
 function App() {
-  const [tasks, setTasks] = useState([]);
   const [input, setInput] = useState("");
 
-  // Add Task
-  function addTask() {
-    if (input.trim() === "") return;
+  const handleClick = (value) => {
+    setInput(input + value);
+  };
 
-    setTasks([
-      ...tasks,
-      {
-        text: input,
-        completed: false,
-      },
-    ]);
-
+  const clear = () => {
     setInput("");
-  }
+  };
 
-  // Delete Task
-  function deleteTask(indexToDelete) {
-    setTasks(
-      tasks.filter((task, index) => index !== indexToDelete)
-    );
-  }
+  const calculate = () => {
+    try {
+      setInput(eval(input).toString());
+    } catch {
+      setInput("Error");
+    }
+  };
 
-  // Mark Complete
-  function toggleTask(indexToToggle) {
-    setTasks(
-      tasks.map((task, index) =>
-        index === indexToToggle
-          ? { ...task, completed: !task.completed }
-          : task
-      )
-    );
-  }
   return (
-    <div>
-      <h1>To-Do List</h1>
+    <div className="container">
+      <div className="calculator">
+        <input
+          type="text"
+          value={input}
+          readOnly
+          className="display"
+        />
 
-      <input
-        type="text"
-        placeholder="Enter task"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-      />
+        <div className="buttons">
+          <button onClick={clear}>C</button>
+          <button onClick={() => handleClick("/")}>/</button>
+          <button onClick={() => handleClick("*")}>×</button>
+          <button onClick={() => handleClick("-")}>−</button>
 
-      <button onClick={addTask}>Add</button>
+          <button onClick={() => handleClick("7")}>7</button>
+          <button onClick={() => handleClick("8")}>8</button>
+          <button onClick={() => handleClick("9")}>9</button>
+          <button onClick={() => handleClick("+")}>+</button>
 
-      <ul>
-        {tasks.map((task, index) => (
-          <li key={index}>
-            <span
-              onClick={() => toggleTask(index)}
-              style={{
-                textDecoration: task.completed
-                  ? "line-through"
-                  : "none",
-                cursor: "pointer",
-                marginRight: "10px",
-              }}
-            >
-              {task.text}
-            </span>
+          <button onClick={() => handleClick("4")}>4</button>
+          <button onClick={() => handleClick("5")}>5</button>
+          <button onClick={() => handleClick("6")}>6</button>
+          <button onClick={calculate} className="equal" rowSpan="2">
+            =
+          </button>
 
-            <button onClick={() => deleteTask(index)}>
-              Delete
-            </button>
-          </li>
-        ))}
-      </ul>
+          <button onClick={() => handleClick("1")}>1</button>
+          <button onClick={() => handleClick("2")}>2</button>
+          <button onClick={() => handleClick("3")}>3</button>
+
+          <button onClick={() => handleClick("0")}>0</button>
+          <button onClick={() => handleClick(".")}>.</button>
+        </div>
+      </div>
     </div>
   );
 }
